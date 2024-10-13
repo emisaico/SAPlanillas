@@ -1,0 +1,92 @@
+
+<div class="contenido">
+  <h1 class="titulo">LISTAR BOLETAS</h1>
+
+
+
+  <div class=" mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+      <!-- ID Boleta Column -->
+      <ng-container matColumnDef="idBoleta">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> ID BOLETA </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.id_boleta}} </mat-cell>
+      </ng-container>
+
+      <!-- tipoPlanilla Column -->
+      <ng-container matColumnDef="tipoPlanilla">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell">  TIPO PLANILLA </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.tipo_planilla}} </mat-cell>
+      </ng-container>
+
+
+
+      <!-- codModular Column -->
+      <ng-container matColumnDef="mesAnio">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> MES/AÑO </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.mesAnio}} </mat-cell>
+      </ng-container>
+
+      <!-- codModular Column -->
+      <ng-container matColumnDef="codModular">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> CODIGO MODULAR </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.codmodular}} </mat-cell>
+      </ng-container>
+
+
+      <!-- nrRegistro Column -->
+      <ng-container matColumnDef="nrRegistro">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> Nº REGISTRO </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.nr_registro}} </mat-cell>
+      </ng-container>
+
+      <!-- nombres Column -->
+      <ng-container matColumnDef="nombres">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> NOMBRES </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.nombres}} </mat-cell>
+      </ng-container>
+
+      <!-- codConcepto Column -->
+      <ng-container matColumnDef="codConcepto">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> CODIGO CONCEPTO </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.cod_concepto}} </mat-cell>
+      </ng-container>
+
+      <!-- concepto Column -->
+      <ng-container matColumnDef="concepto">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> CONCEPTO </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.concepto}} </mat-cell>
+      </ng-container>
+
+      <!-- concepto Column -->
+      <ng-container matColumnDef="montoBruto">monto_bruto
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell"> MONTO BRUTO </mat-header-cell>
+        <mat-cell *matCellDef="let element"  class="custom-cell"> {{element.monto_bruto}} </mat-cell>
+      </ng-container>
+
+       <!-- Informacion Column -->
+      <ng-container matColumnDef="informacion">
+        <mat-header-cell *matHeaderCellDef class="custom-header-cell header-icono">
+          <div class="center-icono">
+            INFORMACIÓN
+          </div>
+        </mat-header-cell>
+        <mat-cell class="custom-cell icono-informacion" *matCellDef="let element">
+          <div class="center-icono">
+            <mat-icon (click)="infoBoleta(element)">info</mat-icon>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"   class="custom-header-row"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"  class="custom-row"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+    </mat-paginator>
+
+  </div>
+
+
+
+</div>
