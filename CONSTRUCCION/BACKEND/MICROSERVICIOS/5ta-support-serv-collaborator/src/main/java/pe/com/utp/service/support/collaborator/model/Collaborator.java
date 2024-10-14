@@ -34,4 +34,7 @@ public class Collaborator {
     @NotNull
     @Column(name = "codigo_modular")
     private Long codigoModular;
+    @NotNull
+    @Column(name = "codigo_secuencial")
+    private Long codigoSecuencial;
 }

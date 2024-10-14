@@ -14,4 +14,5 @@ public class CollaboratorResponse {
     private String apellidoMaterno;
     private String numeroDocumento;
     private String codigoModular;
+    private String codigoSecuencial;
 }

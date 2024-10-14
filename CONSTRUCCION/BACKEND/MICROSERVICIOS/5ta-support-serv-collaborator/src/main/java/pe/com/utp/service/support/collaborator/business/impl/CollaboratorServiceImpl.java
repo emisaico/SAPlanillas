@@ -31,9 +31,8 @@ public class CollaboratorServiceImpl implements CollaboratorService {
         BodyResponse response = new BodyResponse();
 
         try {
-            repository.save(setCollaboratorCreate(request));
+            repository.save(setCollaboratorCreate(request, response));
 
-            System.out.println("ENTRANDO2");
             response.setIdTransaction(correlatorId);
             response.setCode("0");
             response.setMessage("Proceso exitoso");
@@ -64,7 +63,7 @@ public class CollaboratorServiceImpl implements CollaboratorService {
     }
 
 
-    public Collaborator setCollaboratorCreate(CollaboratorRequest request) {
+    public Collaborator setCollaboratorCreate(CollaboratorRequest request,  BodyResponse response) {
 
         Collaborator collaborator = new Collaborator();
 
@@ -73,8 +72,13 @@ public class CollaboratorServiceImpl implements CollaboratorService {
         collaborator.setApellidoMaterno(request.getApellidoMaterno());
         collaborator.setNumeroDocumento(Integer.parseInt(request.getNumeroDocumento()));
         collaborator.setCodigoModular(Long.parseLong(request.getCodigoModular()));
+        collaborator.setCodigoSecuencial(Long.parseLong(request.getCodigoSecuencial()));
 
-        return repository.save(collaborator);
+        repository.save(collaborator);
+
+        response.setIdRegistry(String.valueOf(collaborator.getIdColaborador()));
+
+        return collaborator;
     }
 
     public CollaboratorResponse getCollaborator(Collaborator collaborator) {
@@ -87,6 +91,7 @@ public class CollaboratorServiceImpl implements CollaboratorService {
         response.setApellidoMaterno(collaborator.getApellidoMaterno());
         response.setNumeroDocumento(String.valueOf(collaborator.getNumeroDocumento()));
         response.setCodigoModular(String.valueOf(collaborator.getCodigoModular()));
+        response.setCodigoSecuencial(String.valueOf(collaborator.getCodigoSecuencial()));
 
         return response;
     }

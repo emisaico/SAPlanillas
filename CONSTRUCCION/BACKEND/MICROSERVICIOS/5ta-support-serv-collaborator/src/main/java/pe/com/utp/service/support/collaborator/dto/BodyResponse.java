@@ -9,7 +9,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class BodyResponse {
     @JsonProperty("idTransaction")
     private String idTransaction;
@@ -17,4 +16,6 @@ public class BodyResponse {
     private String code;
     @JsonProperty("message")
     private String message;
+    @JsonProperty("idRegistry")
+    private String idRegistry;
 }

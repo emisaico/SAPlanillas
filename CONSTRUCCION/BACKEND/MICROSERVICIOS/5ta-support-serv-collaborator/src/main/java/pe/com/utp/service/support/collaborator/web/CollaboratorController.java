@@ -88,8 +88,6 @@ public class CollaboratorController {
             @RequestHeader(value = "country", required = false) String country,
             @RequestParam(value = "codigoModular", required = true) String codigoModular) throws DBException {
 
-        System.out.println("ENTRANDO CONTROLLER");
-
         CollaboratorResponse response = new CollaboratorResponse();
         BodyResponse bodyResponse = new BodyResponse();
 
