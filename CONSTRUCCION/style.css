@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #004080;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.codigo-modular {
+  margin-bottom: 20px;
+}
+
+.codigo-modular label {
+  margin-right: 10px;
+}
+
+.detalle-calculo table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.detalle-calculo table th,
+.detalle-calculo table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+.detalle-calculo table th {
+  background-color: #004080;
+  color: white;
+}
+
+.botones {
+  margin-top: 20px;
+}
+
+.botones button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.botones .editar {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.botones .guardar {
+  background-color: #28a745;
+  color: white;
+}
+
+.botones .finalizar {
+  background-color: #007bff;
+  color: white;
+}
