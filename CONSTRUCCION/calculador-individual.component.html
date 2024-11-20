@@ -1,0 +1,64 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Sistema de apoyo Planillas</h2>
+    <ul>
+      <li><a href="#">Menú Quinta Categoría</a></li>
+      <li><a href="#">Gestión de carga</a></li>
+      <li><a href="#">Calculador individual</a></li>
+      <li><a href="#">Gestión de reportes</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Consulta Individual</h1>
+
+    <!-- Código Modular -->
+    <div class="codigo-modular">
+      <label for="codigoModular">Código Modular:</label>
+      <input id="codigoModular" type="text" [(ngModel)]="codigoModular" />
+      <button (click)="buscar()">Buscar</button>
+    </div>
+
+    <!-- Datos del Usuario -->
+    <div *ngIf="resultados" class="resultados">
+      <p><strong>Nombres y Apellidos:</strong> {{ resultados[0]?.nombres }} {{ resultados[0]?.apellido_paterno }} {{ resultados[0]?.apellido_materno }}</p>
+
+      <!-- Detalle del cálculo -->
+      <div class="detalle-calculo">
+        <h3>Detalle de cálculo</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>PERIODO</th>
+              <th>Desc. Mensual de 5ta Categoría</th>
+              <th>Situación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let periodo of resultados">
+              <td>{{ periodo.periodo }}</td>
+              <td>{{ periodo.descuento }}</td>
+              <td>{{ periodo.situacion }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>{{ totalDescuento }}</td>
+              <td>-</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="botones">
+      <button class="editar" *ngIf="!modoEdicion" (click)="activarEdicion()">Editar</button>
+      <button class="guardar" *ngIf="modoEdicion" (click)="guardarCambios()">Guardar</button>
+      <button class="finalizar" (click)="continuar()">Finalizar</button>
+    </div>
+  </div>
+</div>
