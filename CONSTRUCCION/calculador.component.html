@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de apoyo Planillas</title>
+  <!-- Enlace al archivo de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Sistema de apoyo Planillas</h2>
+      <ul>
+        <li><a href="#">Menú Quinta Categoría</a></li>
+        <li><a href="#">Gestión de carga</a></li>
+        <li><a href="#">Calculador individual</a></li>
+        <li><a href="#">Gestión de reportes</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>Consulta Individual</h1>
+
+      <!-- Código Modular -->
+      <div class="codigo-modular">
+        <label for="codigoModular">Código Modular:</label>
+        <input id="codigoModular" type="text" placeholder="Ingrese código modular">
+        <button id="buscarBtn">Buscar</button>
+      </div>
+
+      <!-- Detalle del cálculo -->
+      <div id="detalle-calculo" class="detalle-calculo">
+        <h3>Detalle de cálculo</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>PERIODO</th>
+              <th>Desc. Mensual de 5ta Categoría</th>
+              <th>Situación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí irán los datos cargados dinámicamente -->
+            <tr>
+              <td>Ene-24</td>
+              <td>3,500.50</td>
+              <td>Ejecutado</td>
+            </tr>
+            <tr>
+              <td>Feb-24</td>
+              <td>3,100.50</td>
+              <td>Ejecutado</td>
+            </tr>
+            <tr>
+              <td>Mar-24</td>
+              <td>0.00</td>
+              <td>Pendiente</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>10,201.00</td>
+              <td>-</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Botones -->
+      <div class="botones">
+        <button class="editar" id="editarBtn">Editar</button>
+        <button class="finalizar" id="finalizarBtn">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
